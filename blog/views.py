@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView,  UpdateView, DeleteView
 from django.contrib.auth.models import User
 from .models import Post
-from .chat import jarvischat
+
 
 
 
@@ -78,16 +78,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html', {'title': 'AboutPage'})
 
-def Letschat(request):
-        return render(request, 'blog/chatbot.html', {'title': 'Chatbotpage'})
 
-# def get_bot_response(request):    
-#     userText = request.args.get('msg')  
-#     print(userText)
-#     userText="hi there"
-#     res = jarvischat(userText)  
-#     res1= res
-#     return res
 
 
 
